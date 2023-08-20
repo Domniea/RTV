@@ -28,8 +28,8 @@
 } */
 
 body {
-    /* background-color: black; */
-    background-image: url('./images/wall.jpeg')
+    background-color: grey;
+    /* background-image: url('./images/wall.jpeg') */
 }
 
 .error {
