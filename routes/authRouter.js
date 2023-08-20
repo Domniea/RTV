@@ -6,7 +6,7 @@ const user = require('../models/user')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
 
-console.log('t2')
+
 //  //Signup
 authRouter.post('/signup', (req, res, next) => {
     User.findOne(
