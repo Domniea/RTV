@@ -31,7 +31,7 @@ function UserProvider(props) {
 
     //Signup
     function signup(credentials) {
-        axios.post('https://rtv-production.up.railway.app/auth/signup', credentials)
+        axios.post(`/api/auth/signup`, credentials)
             .then(res => {
                 const { user, token } = res.data
                 localStorage.setItem('token', token)
@@ -47,7 +47,7 @@ function UserProvider(props) {
 
     //Login
     function login(credentials) {
-        axios.post('https://rtv-production.up.railway.app/auth/login', credentials)
+        axios.post(`/api/auth/login`, credentials)
             .then(res => {
                 const { user, token } = res.data
                 localStorage.setItem('token', token)
@@ -77,7 +77,7 @@ function UserProvider(props) {
 
     //Add Post
     function addPost(credentials){
-        userAxios.post('https://rtv-production.up.railway.app/api/posts/', credentials)
+        userAxios.post(`/api/api/posts/`, credentials)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,
@@ -90,7 +90,7 @@ function UserProvider(props) {
 
     // //Get Users Posts
     // function getUsersPosts(userId) {
-    //     userAxios.get(`https://rtv-production.up.railway.app/api/posts/${userId}`)
+    //     userAxios.get(`/api/api/posts/${userId}`)
     //         .then(res => {
     //             setUserState(prevState => ({
     //                 ...prevState,
@@ -103,7 +103,7 @@ function UserProvider(props) {
 
     //Delete User Post
     function deletePost(postId) {
-        userAxios.delete(`https://rtv-production.up.railway.app/api/posts/${postId}`)
+        userAxios.delete(`/api/api/posts/${postId}`)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,
@@ -115,7 +115,7 @@ function UserProvider(props) {
 
     //Edit Password
     function editPassword(credentials, userId) {
-        userAxios.put(`https://rtv-production.up.railway.app/auth/passupdate/${userId}`, credentials)
+        userAxios.put(`/api/auth/passupdate/${userId}`, credentials)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }

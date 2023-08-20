@@ -27,7 +27,6 @@ async function displaySortedPosts(res){
         let totalVote = postVotes.reduce((acc, ballot) => {
             return acc += ballot.vote
         }, 0)
-        // console.log(totalVote)
         post.votes = totalVote
         
         updatedArr.push(post)
@@ -36,8 +35,6 @@ async function displaySortedPosts(res){
     const sortedArr = updatedArr.sort((a,b) => {
         return b.votes - a.votes
     })
-
-    // console.log(sortedArr)
     return res.send(sortedArr)
     updatedArr = []
 }
@@ -46,7 +43,7 @@ async function displaySortedPosts(res){
 
 voteRouter.get('/sorted', ( req, res, next) => {
     displaySortedPosts(res)
-        .then(res => console.log(res))
+        // .then(res => console.log(res))
 
 
 })

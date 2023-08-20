@@ -8,7 +8,7 @@ const Vote = require('../models/voter')
 
 // Get All Posts
 postRouter.get("/", (req, res, next) => {
-    var myCursor = Post.find(
+    Post.find(
         (err, posts) => {
             if(err) {
                 res.status(500)
@@ -85,26 +85,21 @@ postRouter.delete('/:postId', (req, res, next) => {
 
 //Retrieve Posters Username
 postRouter.get('/:postId/username', (req, res, next) => {
-    const Poster = Post.findOne(
+    Post.findOne(
         { _id: req.params.postId },
         (err, post) => {
             if(err){
                 res.status(500)
                 return next(err)
             }
-            // console.log(post)
             User.findOne(
                 {_id: post.user},
                 (err, user) => {
-                    // console.log(user)
                     if(err){
                         res.status(500)
                         return next(err)
                     }
                     return res.status(200).send(user)
-                    
-                    
-
                 }
             )
         }

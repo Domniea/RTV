@@ -20,7 +20,6 @@ commentRouter.get('/:postId', (req, res, next) => {
 //Post Comment
 commentRouter.post('/:postId', (req, res, next) => {
     req.body.user = req.auth._id
-    console.log(req.body)
     const newComment = new Comment(req.body)
     newComment.save((err, savedComment) => {
         if(err) {

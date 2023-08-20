@@ -25,7 +25,6 @@ mongoose.connect(`${process.env.MONGO_URL}`, () => {
   });
 
 app.get('/', (req, res) => {
-console.log(req)
 res.send(
     'Welcome to the Server'
     )

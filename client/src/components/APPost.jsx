@@ -21,13 +21,13 @@ function APPost(props) {
 
     //Retrieve Post Comments
     function retrievePostComments(postId) {
-        userAxios.get(`https://rtv-production.up.railway.app/api/comment/${postId}`)
+        userAxios.get(`/api/api/comment/${postId}`)
             .then(res => setPostComments(res.data))
             .catch(err => console.log(err))
     }
 
     function retrievePoster(postId) {
-        userAxios.get(`https://rtv-production.up.railway.app/api/posts/${postId}/username`)
+        userAxios.get(`/api/api/posts/${postId}/username`)
             .then(res => {
                 return setPoster(String(res.data.username))
             })

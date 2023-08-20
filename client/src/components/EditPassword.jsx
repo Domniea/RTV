@@ -35,7 +35,6 @@ function EditPassword() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(inputs)
         editPassword(inputs, _id)
     }
 

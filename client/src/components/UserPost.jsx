@@ -20,12 +20,11 @@ function UserPost(props) {
     
     function toggleEdit() {
         setEdit(prevState => !prevState)
-        console.log(edit)
     }
     
     //Retrieve Post Comments
     function retrievePostComments(postID) {
-        userAxios.get(`https://rtv-production.up.railway.app/api/comment/${postID}`)
+        userAxios.get(`/api/api/comment/${postID}`)
             .then(res => setPostComments(res.data))
             .catch(err => console.log(err))
     }

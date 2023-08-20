@@ -28,7 +28,7 @@ function CommentsProvider(props) {
     
     //Post Comment
     function addComment(credentials, postId) {
-        userAxios.post(`https://rtv-production.up.railway.app/api/comment/${postId}`, {comment: credentials.comment, post: postId})
+        userAxios.post(`/api/api/comment/${postId}`, {comment: credentials.comment, post: postId})
         .then(res => console.log(res))
         .catch(err => console.log(err))
     }

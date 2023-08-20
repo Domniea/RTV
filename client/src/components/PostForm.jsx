@@ -24,7 +24,6 @@ function PostForm(props) {
     
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(inputs)
         submit(inputs, post_id)
         // console.log(edit)
         if(edit) {
