@@ -18,7 +18,7 @@ function Comment(props) {
     const CapsPoster = commenter.charAt(0).toUpperCase() + commenter.slice(1)
 
     function retrieveCommenter(commentId) {
-        userAxios.get(`https://rtv-production-5175.up.railway.app/comment/${commentId}/username`)
+        userAxios.get(`https://rtv-production-5175.up.railway.app/api/comment/${commentId}/username`)
             .then(res => {
               setCommenter(String(res.data.username))
             })

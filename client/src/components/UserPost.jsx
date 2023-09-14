@@ -24,7 +24,7 @@ function UserPost(props) {
     
     //Retrieve Post Comments
     function retrievePostComments(postID) {
-        userAxios.get(`https://rtv-production-5175.up.railway.app/comment/${postID}`)
+        userAxios.get(`https://rtv-production-5175.up.railway.app/api/comment/${postID}`)
             .then(res => setPostComments(res.data))
             .catch(err => console.log(err))
     }
