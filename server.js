@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use(
   cors({
-    origin: ["https://rtv-production.up.railway.app/"],
+    origin: ["`https://rtv-production-5175.up.railway.app/"],
     methods: ["GET", "POST", "PUT","DELETE"],
     credentials: true,
     origin: true,

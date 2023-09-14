@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const userAxios = axios.create()
@@ -31,7 +30,7 @@ function UserProvider(props) {
 
     //Signup
     function signup(credentials) {
-        axios.post(`/api/auth/signup`, credentials)
+        axios.post(`https://rtv-production-5175.up.railway.app/auth/signup`, credentials)
             .then(res => {
                 const { user, token } = res.data
                 localStorage.setItem('token', token)
@@ -47,7 +46,7 @@ function UserProvider(props) {
 
     //Login
     function login(credentials) {
-        axios.post(`/api/auth/login`, credentials)
+        axios.post(`https://rtv-production-5175.up.railway.app/auth/login`, credentials)
             .then(res => {
                 const { user, token } = res.data
                 localStorage.setItem('token', token)
@@ -77,7 +76,7 @@ function UserProvider(props) {
 
     //Add Post
     function addPost(credentials){
-        userAxios.post(`/api/api/posts/`, credentials)
+        userAxios.post(`https://rtv-production-5175.up.railway.app/posts/`, credentials)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,
@@ -90,7 +89,7 @@ function UserProvider(props) {
 
     // //Get Users Posts
     // function getUsersPosts(userId) {
-    //     userAxios.get(`/api/api/posts/${userId}`)
+    //     userAxios.get(`https://rtv-production-5175.up.railway.app/posts/${userId}`)
     //         .then(res => {
     //             setUserState(prevState => ({
     //                 ...prevState,
@@ -103,7 +102,7 @@ function UserProvider(props) {
 
     //Delete User Post
     function deletePost(postId) {
-        userAxios.delete(`/api/api/posts/${postId}`)
+        userAxios.delete(`https://rtv-production-5175.up.railway.app/posts/${postId}`)
             .then(res => {
                 setUserState(prevState => ({
                     ...prevState,

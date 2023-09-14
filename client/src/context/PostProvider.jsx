@@ -21,7 +21,7 @@ function PostProvider(props) {
 
     //Get Users Posts
     function getUsersPosts(userId) {
-        userAxios.get(`/api/api/posts/${userId}`)
+        userAxios.get(`https://rtv-production-5175.up.railway.app/posts/${userId}`)
             .then(res => {
                 setUserPosts(res.data)
                 // setUserPosts(prevState => {
@@ -34,7 +34,7 @@ function PostProvider(props) {
         
     //Get All Posts
     function getAllPosts() {
-        userAxios.get(`/api/api/vote/sorted`)
+        userAxios.get(`https://rtv-production-5175.up.railway.app/vote/sorted`)
         .then(res => {
             setAllPosts(res.data)
         })
@@ -43,7 +43,7 @@ function PostProvider(props) {
 
     //Add Post
     function addPost(credentials, userId){
-        userAxios.post(`/api/api/posts/${userId}`, credentials)
+        userAxios.post(`https://rtv-production-5175.up.railway.app/posts/${userId}`, credentials)
             .then(res => {
                 // setUserPosts(prevState => {
                 //     return [
@@ -63,7 +63,7 @@ function PostProvider(props) {
 
     //Edit Post
     function editPost(credentials, postId) {
-        userAxios.put(`/api/api/posts/${postId}`, credentials)
+        userAxios.put(`https://rtv-production-5175.up.railway.app/posts/${postId}`, credentials)
             .then(res => {
                 setUserPosts(prevState => {
                     return prevState.map(post => post._id !== postId ? post : res.data)
@@ -74,7 +74,7 @@ function PostProvider(props) {
 
     //Delete User Post
     function deletePost(postId) {
-        userAxios.delete(`/api/api/posts/${postId}`)
+        userAxios.delete(`https://rtv-production-5175.up.railway.app/posts/${postId}`)
             .then(res => {
                 // setUserPosts(prevState => prevState.filter(posts => posts._id !== postId))
                 setAllPosts(prevState => prevState.filter(posts => posts._id !== postId))
@@ -84,14 +84,14 @@ function PostProvider(props) {
 
     //Vote Scores
     function getVoteScores() {
-        userAxios.get(`/api/api/vote/`)
+        userAxios.get(`https://rtv-production-5175.up.railway.app/vote/`)
             // .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
 
     //Upvote
     function upVote(postId) {
-        userAxios.put(`/api/api/vote/up/${postId}`)
+        userAxios.put(`https://rtv-production-5175.up.railway.app/vote/up/${postId}`)
             .then(res => {
                 // getVoteScores()
             })
@@ -102,7 +102,7 @@ function PostProvider(props) {
 
     //Downvote
     function downVote(postId) {
-        userAxios.put(`/api/api/vote/down/${postId}`)
+        userAxios.put(`https://rtv-production-5175.up.railway.app/vote/down/${postId}`)
             // .then(res => {
             //     // getVoteScores()
             // })
