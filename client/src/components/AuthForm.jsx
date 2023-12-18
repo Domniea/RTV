@@ -32,6 +32,7 @@ function AuthForm(props) {
                 onChange={handleChange} 
                 className='form-control'
             />
+            <br />
             <button className='btn border m-1 bg-secondary text-white border-dark'>{buttonTxt}</button>
         </form>
     )

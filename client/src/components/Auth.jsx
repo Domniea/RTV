@@ -39,8 +39,10 @@ function Auth() {
     return (
         <div className="m-5 text-white">
            <header>
-            <h1 className='' >Welcome</h1>
+            <h1 className='text-center' >Welcome to Rock The Vote!</h1>
            </header>
+           <h2 className='text-center'>Feel free to make an acount and explore!</h2>
+           <br />
             {
                 !loggedIn ?
                 <>
@@ -51,6 +53,7 @@ function Auth() {
                         handleSubmit={handleSignup}
                     />
                    { errMsg && <h3 className='error' style={{color: 'red'}}>{errMsg}</h3> }
+                   <br />
                     <h3 className='text-light' onClick={() => toggle()}>Already a User?</h3>
                 </>
                 :
@@ -61,7 +64,9 @@ function Auth() {
                         handleChange={handleChange}
                         handleSubmit={handleLogin}
                     />
+                    <br />
                     { errMsg && <h3 className='error'style={{color: 'red'}}>{errMsg}</h3> }
+                    <br />
                     <h3 className='text-light' onClick={() => toggle()}>Not a User yet?</h3>
                 </>
             }
